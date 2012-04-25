@@ -139,14 +139,14 @@ height, float dt, int Niter, float *F){
 		ecuacion_propagacion(red_output,width,height,dt,F,i);
 		for(j=0;j<(width*height);j++){
 			if (red_output[j] < 0){
-				rojo[j]=0;
+				red_output[j]=0;
 			}
 			else{
 				if (red_output[j]>255){
-					rojo[j]=255;
+					red_output[j]=255;
 				}
-				else rojo[j] = (unsigned char)red_output[j];
 			}
+			rojo[j] = (unsigned char)red_output[j];
 
 		}
 		sprintf(name,"/home/groteck/Imágenes/practica7/resultado/imagen_%d.bmp",100000+i);
